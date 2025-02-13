@@ -3,7 +3,7 @@
 ## Curso de HTML, CSS y javascript
 
 ## Nombre del estudiante
-    Santiago Jimenez Segura
+Santiago Jimenez Segura
 
 ### Seccion
 
