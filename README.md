@@ -5,7 +5,7 @@
 ## Nombre del estudiante
 Santiago Jimenez Segura
 
-### Seccion
+### Seccion 10-2
 
 ### Descripcion del repositorio
 
