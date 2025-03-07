@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<title>Acertijos</title>
+
+<head>
+<link rel="stylesheet" href="misEstilos.css">
+</head>
+
+<body onload = "comenzarTiempo(); fecha()">
+
+<pre> 
+1. Cual es el isotopo fisible del uranio?
+
+<input type="text" id="respuesta1">
+
+2.Cual es el elemento mas abundante en el universo
+
+<input type="text" id="respuesta2">
+
+3.Como se llama el isotopo del hidrogeno con un proton y un neutron?
+
+<input type="text" id="respuesta3">
+
+4.Cual es el tipo de radiacion mas nociva?
+
+<input type="text" id="respuesta4">
+
+5.Cual es el tipo de reaccion nuclear que ocurre en las estrellas?
+
+<input type="text" id="respuesta5">
+
+
+<button onclick="finalizarJuego()">Finalizar</button>
+
+<button onclick="reiniciarJuego()">Reiniciar</button>
+
+<h1 id=tiempoRestante>00</h1>
+</pre>
+<script>
+    let elementoRes1 = document.getElementById("respuesta1");
+    let elementoRes2 = document.getElementById("respuesta2");
+    let elementoRes3 = document.getElementById("respuesta3");
+    let elementoRes4 = document.getElementById("respuesta4");
+    let elementoRes5 = document.getElementById("respuesta5");
+    let timeoutID
+//Consigue los valores para la fecha//
+    function fecha(){
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate()
+        CurrentDate = day + "/" + month + "/" + year
+    }
+
+    //Comienza el temporizador//
+    function comenzarTiempo(){
+            timeoutID=setTimeout(seAcaboElTiempo, 30000);
+        }
+//mensaje de game over//
+    function seAcaboElTiempo(){
+        alert ("Game over");
+        }
+//Reinicia el juego//
+    function reiniciarJuego(){
+        location.reload()
+    }
+
+    
+//Funcion que se ejecuta al pulsar el boton de Finalizar, aqui se para el timeout//
+    function finalizarJuego(){clearTimeout(timeoutID)
+        alert(
+        "Tu primer respuesta es " + elementoRes1.value + "\n" +
+        "Tu segunda respuesta es " + elementoRes2.value + "\n" +
+        "Tu tercer respuesta es " + elementoRes3.value + "\n" +
+        "Tu cuarta respuesta es " + elementoRes4.value + "\n" +
+        "Tu quinta respuesta es " + elementoRes5.value + "\n" +"\n" +
+        "Respuestas correctas: " + "\n" +"\n" +
+        "Primera: U-235 " + "\n" +
+        "Segunda: Hidrogeno " + "\n" +
+        "Tercera: Deuterio " + "\n" +
+        "Cuarta: Neutrones " + "\n" +
+        "Quinta: Fusion Nuclear " + "\n" + "\n" +
+        "La fecha de hoy es: " + CurrentDate)
+    }
+
+   
+
+</script>
+    
+
+
+</body>
+
+</html>
