@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>Calculadora</title>
+    <head>
+        <link rel="stylesheet" href="misEstilos.css">
+    </head>
+</html>
+
+<body>
+<input type="number" id="input1">
+<input type="number" id="input2">
+<button onclick="suma()">+</button>
+<button onclick="resta()">-</button>
+<button onclick="multiplicacion()">x</button>
+<button onclick="division()">/</button>
+<button onclick="raiz()">Raiz</button>
+<button onclick="potencia()">Potencia</button>
+<button onclick="absoluto()">Absoluto</button>
+<button onclick="random()">Random</button>
+<pre>Resultado: <input type="text" id="resultado"></input></pre>
+<button onclick="round()">Round</button>
+
+
+
+<script>
+    function obtenerValores(){
+
+    let input1= document.getElementById ("input1").value
+    let input2= document.getElementById ("input2").value
+    return (input1, input2);
+
+}
+
+    function suma(){
+        let valores = obtenerValores();
+        mostrarResultado(input(0) + input2(1))
+    
+    }
+</script>
+</body>
