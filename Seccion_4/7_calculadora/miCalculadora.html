@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <title>Calculadora</title>
     <head>
+        <title>Calculadora</title>
         <link rel="stylesheet" href="misEstilos.css">
     </head>
+    <body>
+        <input type="number" id="input1">
+        <input type="number" id="input2">
+        <button onclick="suma()">+</button>
+        <button onclick="resta()">-</button>
+        <button onclick="multiplicacion()">x</button>
+        <button onclick="division()">/</button>
+        <button onclick="raiz()">Raiz</button>
+        <button onclick="potencia()">Potencia</button>
+        <button onclick="absoluto()">Absoluto</button>
+        <button onclick="random()">Random</button>
+        <pre><h3>Resultado: <input type="text" id="resultado" readonly></h3></pre>
+        <button onclick="round()">Round</button>
+
+        <script>
+            function mostrarResultado(valor){
+                document.getElementById("resultado").value = valor;
+            }
+
+            function obtenerValores(){
+                let input1 = parseFloat(document.getElementById("input1").value) || 0;
+                let input2 = parseFloat(document.getElementById("input2").value) || 0;
+                return [input1, input2];
+            }
+
+            function suma(){
+                let valores = obtenerValores();
+                mostrarResultado(valores[0] + valores[1]);
+            }
+
+            function resta() {
+                let valores = obtenerValores();
+                mostrarResultado(valores[0] - valores[1]);
+            }
+
+            function multiplicacion() {
+                let valores = obtenerValores();
+                mostrarResultado(valores[0] * valores[1]);
+            }
+
+            function division() {
+                let valores = obtenerValores();
+                if (valores[1] !== 0) {
+                    mostrarResultado(valores[0] / valores[1]);
+                } else {
+                    mostrarResultado("Error");
+                }
+            }
+
+            function raiz() {
+                let valores = obtenerValores();
+                mostrarResultado(Math.sqrt(valores[0]));
+            }
+
+            function absoluto() {
+                let valores = obtenerValores();
+                mostrarResultado(Math.abs(valores[0]));
+            }
+
+            function random() {
+                mostrarResultado(Math.random());
+            }
+
+            function round() {
+                let valores = obtenerValores();
+                mostrarResultado(Math.round(valores[0]));
+            }
+        </script>
+    </body>
 </html>
-
-<body>
-<input type="number" id="input1">
-<input type="number" id="input2">
-<button onclick="suma()">+</button>
-<button onclick="resta()">-</button>
-<button onclick="multiplicacion()">x</button>
-<button onclick="division()">/</button>
-<button onclick="raiz()">Raiz</button>
-<button onclick="potencia()">Potencia</button>
-<button onclick="absoluto()">Absoluto</button>
-<button onclick="random()">Random</button>
-<pre>Resultado: <input type="text" id="resultado"></input></pre>
-<button onclick="round()">Round</button>
-
-
-
-<script>
-    function obtenerValores(){
-
-    let input1= document.getElementById ("input1").value
-    let input2= document.getElementById ("input2").value
-    return (input1, input2);
-
-}
-
-    function suma(){
-        let valores = obtenerValores();
-        mostrarResultado(input(0) + input2(1))
-    
-    }
-</script>
-</body>
