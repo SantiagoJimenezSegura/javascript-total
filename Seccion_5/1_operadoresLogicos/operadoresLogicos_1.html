@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>Operadores Logicos</head>
+    <body>
+    <pre>Ingrese un primer numero<input type="number" id="primerNumero"></pre>
+
+    <pre>Ingrese un segundo numero<input type="number" id="segundoNumero"></pre>
+
+    <button onclick="calcularDiferencia()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDiferencia(){
+
+        let primerNumero = document.getElementById ("primerNumero")
+        let segundoNumero = document.getElementById ("segundoNumero")
+        let resultado = document.getElementById ("resultado")
+
+
+        let valor1 = primerNumero.value
+        let valor2 = segundoNumero.value
+
+       let mayorQue = valor1>=valor2;
+       resultado.textContent = mayorQue
+        }
+    </script>
+    </body>
+</html>
