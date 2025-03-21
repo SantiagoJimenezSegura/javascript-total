@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>Switches que switchean</head>
+<body>
+<pre>
+Escribe la fruta
+<input type="text" id="fruta">
+
+<button onclick="evaluarParametro()">Enviar</button>
+</pre>
+
+<script>
+function evaluarParametro(){
+
+let elementoFruta = document.getElementById ("fruta");
+let fruta = elementoFruta.value;
+
+switch (fruta)
+{
+    case "Manzana":
+    alert ("El precio de la manzana es: 15")
+    break;
+
+    case "Naranja":
+    alert ("El precio de la naranja es: 20")
+    break;
+
+    case "Banana":
+    alert ("El precio de la banana es: 25")
+    break;
+}
+
+}
+</script>
+</body>
