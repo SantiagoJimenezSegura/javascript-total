@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Multiplicación</title>
+</head>
+<body>
+    <script>
+        function mostrarTablaMultiplicacion() {
+            let numero = parseInt(prompt("Ingresa un número para ver su tabla de multiplicación:"), 10);
+            let multiplicador = 1;
+
+            do {
+                console.log(numero + " x " + multiplicador + " = " + (numero * multiplicador));
+                multiplicador++;
+            } while (multiplicador <= 10);
+        }
+
+        mostrarTablaMultiplicacion();
+    </script>
+</body>
+</html>
