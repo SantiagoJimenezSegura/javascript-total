@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
     <title>Ejercicio 1</title>
 </head>
 <body>
     <script>
-        function runIterations(numIterations) {
+        function testLoop(vueltasNum) {
             let index = 0;
             do {
                 console.log("Vuelta numero: " + (index + 1));
                 index++;
-            } while (index < numIterations);
+            } while (index < vueltasNum);
         }
 
-        let iterations = parseInt(prompt("¿Cuántas vueltas deseas realizar?"), 10);
+        let vueltas = parseInt(prompt("¿Cuántas vueltas deseas realizar?"), 10);
         
-        runIterations(iterations);
+        testLoop(vueltas);
     </script>
 </body>
 </html>
