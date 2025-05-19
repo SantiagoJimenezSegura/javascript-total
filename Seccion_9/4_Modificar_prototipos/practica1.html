@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar prototipos</title>
+</head>
+<body>
+    <script>
+        function Videojuego(nombre, empresa, anioLanzamiento) {
+            this.nombre = nombre;
+            this.empresa = empresa;
+            this.anioLanzamiento = anioLanzamiento;
+        }
+        Videojuego.prototype.jugar = function() {
+            console.log(this.nombre + " ha sido iniciado");
+        };
+        let videojuego1 = new Videojuego('Mario Bros', 'Nintendo', '1983');
+        videojuego1.jugar();
+    </script>
+</body>
+</html>
