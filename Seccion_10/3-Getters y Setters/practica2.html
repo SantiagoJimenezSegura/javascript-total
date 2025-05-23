@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Getters y Setters</title>
+</head>
+<body>
+    <script>
+        class Colegio {
+            constructor(Nombre, Region, CantEstudiantes) {
+                this._Nombre = Nombre;
+                this._Region = Region;
+                this._CantEstudiantes = CantEstudiantes;
+            }
+            get CantEstudiantes() {
+                return this._CantEstudiantes;
+            }
+            set CantEstudiantes(nuevoEstudiantes) {
+                this._CantEstudiantes = nuevoEstudiantes;
+            }
+        }
+        let colegio1 = new Colegio("CTP", "San Rafael", 700);
+        console.log(colegio1)
+        colegio1.CantEstudiantes = 500;
+        console.log(colegio1);
+        
+    </script>
+</body>
+</html>

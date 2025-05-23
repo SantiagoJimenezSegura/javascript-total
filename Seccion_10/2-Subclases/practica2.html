@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subclases2</title>
+</head>
+<body>
+    <script>
+        class Medico{
+            constructor (nombre,apellido){
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        }
+
+        class Cirujano extends Medico{
+            constructor (nombre,apellido,CantOperaciones){
+                super(nombre,apellido);
+                this.CantOperaciones=CantOperaciones;
+            }
+        }
+        let Cirujano1=new Cirujano("David", "Hernandez",7);
+        console.log(Cirujano1)
+    </script>
+</body>
+</html>

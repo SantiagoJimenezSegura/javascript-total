@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Getters y Setters</title>
+</head>
+<body>
+    <script>
+        class Ciudad {
+            constructor(Nombre, Pais, CantHabitantes) {
+                this._Nombre = Nombre;
+                this._Pais = Pais;
+                this._CantHabitantes = CantHabitantes;
+            }
+            get CantHabitantes() {
+                return this._CantHabitantes;
+            }
+            set CantHabitantes(nuevoHabitantes) {
+                this._CantHabitantes = nuevoHabitantes;
+            }
+        }
+        let ciudad = new Ciudad("Madrid", "España", 3200000);
+        console.log(ciudad.CantHabitantes);
+        ciudad.CantHabitantes = 3300000;
+        console.log(ciudad.CantHabitantes);
+    </script>
+</body>
+</html>
