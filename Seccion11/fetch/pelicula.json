@@ -1,0 +1,8 @@
+{
+  "titulo": "Matrix",
+  "director": "Lana y Lilly Wachowski",
+  "lanzamiento": 1999,
+  "duracion": 136,
+  "actores": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+  "premioOscar": true
+}

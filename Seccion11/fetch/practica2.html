@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Colegio - Fetch</title>
+</head>
+<body>
+  <h1>Colegio (usando fetch)</h1>
+  <button onclick="obtenerDatos()">Cargar Datos</button>
+  <div id="colegio"></div>
+
+  <script>
+    let nombre;
+    let calle;
+    let ciudad;
+    let cantEstudiantes;
+    let estudiantes;
+
+    function obtenerDatos() {
+      fetch("colegio.json")
+        .then(response => response.json())
+        .then(data => {
+          nombre = data.nombre;
+          calle = data.calle;
+          ciudad = data.ciudad;
+          cantEstudiantes = data.cantEstudiantes;
+          estudiantes = data.estudiantes;
+
+          document.getElementById("colegio").innerHTML = `
+            <p><strong>Nombre:</strong> ${nombre}</p>
+            <p><strong>Calle:</strong> ${calle}</p>
+            <p><strong>Ciudad:</strong> ${ciudad}</p>
+            <p><strong>Cantidad de Estudiantes:</strong> ${cantEstudiantes}</p>
+            <p><strong>Estudiantes:</strong> ${estudiantes.join(", ")}</p>
+          `;
+        })
+        .catch(error => console.error("Error al cargar el colegio:", error));
+    }
+  </script>
+</body>
+</html>

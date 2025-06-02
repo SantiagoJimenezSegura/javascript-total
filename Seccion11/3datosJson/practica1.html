@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Película JSON</title>
+</head>
+<body>
+  <h1>Datos de Película</h1>
+  <button onclick="obtenerDatos()">Cargar Película</button>
+  <div id="resultado"></div>
+
+  <script>
+    let titulo;
+    let director;
+    let lanzamiento;
+    let duracion;
+    let actores;
+    let premioOscar;
+
+    function obtenerDatos() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "pelicula.json", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const datos = JSON.parse(xhr.responseText);
+          titulo = datos.titulo;
+          director = datos.director;
+          lanzamiento = datos.lanzamiento;
+          duracion = datos.duracion;
+          actores = datos.actores;
+          premioOscar = datos.premioOscar;
+
+          document.getElementById("resultado").innerHTML = `
+            <p><strong>Título:</strong> ${titulo}</p>
+            <p><strong>Director:</strong> ${director}</p>
+            <p><strong>Lanzamiento:</strong> ${lanzamiento}</p>
+            <p><strong>Duración:</strong> ${duracion} minutos</p>
+            <p><strong>Actores:</strong> ${actores.join(", ")}</p>
+            <p><strong>¿Ganó un Oscar?:</strong> ${premioOscar ? "Sí" : "No"}</p>
+          `;
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
