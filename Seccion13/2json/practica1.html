@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica JSON 1</title>
+</head>
+<body>
+  <h1>Práctica JSON 1</h1>
+  <p>Abre la consola del navegador para ver los datos (F12)</p>
+
+  <script>
+    fetch('datos.json')
+      .then(respuesta => respuesta.json())
+      .then(json1 => {
+        console.log("Contenido del archivo JSON:");
+        console.log(json1);
+      })
+      .catch(error => {
+        console.error("Error al cargar el archivo JSON:", error);
+      });
+  </script>
+</body>
+</html>

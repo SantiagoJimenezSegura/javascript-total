@@ -1,0 +1,7 @@
+{
+  "nombre": "Colegio San Martín",
+  "calle": "Calle Libertad 456",
+  "ciudad": "Buenos Aires",
+  "cantEstudiantes": 320,
+  "estudiantes": ["Sofía", "Juan", "Pedro", "Lucía", "Mateo"]
+}

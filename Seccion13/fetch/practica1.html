@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Película - Fetch</title>
+</head>
+<body>
+  <h1>Película (usando fetch)</h1>
+  <button onclick="obtenerDatos()">Cargar Datos</button>
+  <div id="pelicula"></div>
+
+  <script>
+    let titulo;
+    let director;
+    let lanzamiento;
+    let duracion;
+    let actores;
+    let premioOscar;
+
+    function obtenerDatos() {
+      fetch("pelicula.json")
+        .then(response => response.json())
+        .then(data => {
+          titulo = data.titulo;
+          director = data.director;
+          lanzamiento = data.lanzamiento;
+          duracion = data.duracion;
+          actores = data.actores;
+          premioOscar = data.premioOscar;
+
+          document.getElementById("pelicula").innerHTML = `
+            <p><strong>Título:</strong> ${titulo}</p>
+            <p><strong>Director:</strong> ${director}</p>
+            <p><strong>Lanzamiento:</strong> ${lanzamiento}</p>
+            <p><strong>Duración:</strong> ${duracion} min</p>
+            <p><strong>Actores:</strong> ${actores.join(", ")}</p>
+            <p><strong>¿Ganó Oscar?:</strong> ${premioOscar ? "Sí" : "No"}</p>
+          `;
+        })
+        .catch(error => console.error("Error al cargar la película:", error));
+    }
+  </script>
+</body>
+</html>

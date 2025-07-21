@@ -1,0 +1,7 @@
+{
+  "nombre": "Instituto Nacional",
+  "calle": "Avenida Central 123",
+  "ciudad": "Santiago",
+  "cantEstudiantes": 450,
+  "estudiantes": ["Ana", "Luis", "Carlos", "Marta"]
+}
